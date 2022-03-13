@@ -2,7 +2,9 @@ import React from 'react'
 
 const DishesCatalog = () => {
   return (
-    <div>DishesCatalog</div>
+    <div class="main-container">
+      <div class="side-menu"></div>
+    </div>
   )
 }
 
