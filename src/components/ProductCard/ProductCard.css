@@ -1,0 +1,62 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  background-color: #E9ECEF;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.foods-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  max-width: 1260px;
+}
+
+.food-card {
+  background-color: #FFFFFF;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 290px;
+  margin-bottom: 20px;
+}
+
+.productImage {
+  border-radius: 5px 5px 0 0;
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.infos-subcontainer {
+  margin: 7px 0 10px 13px;
+}
+
+.productName {
+  color: #000000;
+  font-weight: 600;
+  font-size: 8px;
+  letter-spacing: .4px;
+}
+
+.productDescription {
+  font-weight: 400;
+  color: #6F7578;
+  font-size: 12px;
+  margin: 0 auto 15px auto;
+}
+
+.productPrice {
+  color: #000000;
+  font-weight: 600;
+  font-size: 8px;
+  letter-spacing: .4px;
+  margin: 0;
+}
