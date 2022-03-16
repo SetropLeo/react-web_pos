@@ -5,4 +5,8 @@ type Products = {
   image: string;
 };
 
-export type { Products };
+type foodCategories = {
+  category: string;
+}
+
+export type { Products, foodCategories };
