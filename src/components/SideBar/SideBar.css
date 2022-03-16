@@ -1,16 +1,55 @@
 .sidebar-main-container {
   background-color: #FFFFFF;
-  width: 125px;
-  height: 1000px;
+  width: 150px;
+  font-family: sans-serif;
+  height: 100%;
 }
 
 .business-subcontainer {
-  color: #000000;
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: .4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .business-subcontainer img {
   width: 60px;
+}
+
+.business-subcontainer p {
+  margin: 0;
+  color: #000000;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: .8px;
+}
+
+.category-subcontainer {
+  padding: 4px 0 6px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 95px;
+  margin: 8px auto 8px auto;
+  opacity: .3;
+  cursor: pointer;
+}
+
+.category-subcontainer img {
+  height: 35px;
+}
+
+.category-subcontainer p {
+  margin: 0;
+  font-size: 11px;
+}
+
+.category-subcontainer.active {
+  border: 1px solid black;
+  border-radius: 6px;
+  opacity: 1;
 }
