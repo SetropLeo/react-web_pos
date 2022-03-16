@@ -18,7 +18,7 @@ const ProductCard: React.FC = () => {
   })
 
   return (
-    <div className='main-container'>
+    <div className='productcards-main-container'>
       <div className='foods-container'>
         {foods.length > 0 && foods.map((product: Products) => {
           return (
