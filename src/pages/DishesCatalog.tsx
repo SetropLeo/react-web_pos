@@ -1,9 +1,13 @@
 import React from 'react'
+import ProductCard from '../components/ProductCard/ProductCard'
+import SideBar from '../components/SideBar/SideBar'
 
 const DishesCatalog: React.FC = () => {
   return (
     <div className='main-container'>
-      <div className='side-menu'></div>
+      <div className='side-menu'>
+        <SideBar children={<ProductCard />} />
+      </div>
     </div>
   )
 }
