@@ -15,7 +15,7 @@ const ProductCard: React.FC = () => {
     fetch('http://localhost:3001/products')
       .then(response => response.json())
       .then(responseJSON => setFoods(responseJSON))
-  })
+  }, [])
 
   return (
     <div className='productcards-main-container'>

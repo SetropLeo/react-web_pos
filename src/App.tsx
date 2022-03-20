@@ -4,12 +4,10 @@ import AppRoutes from './routes';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
-}; 
+};
 
 export default App;

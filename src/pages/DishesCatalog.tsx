@@ -6,7 +6,8 @@ const DishesCatalog: React.FC = () => {
   return (
     <div className='main-container'>
       <div className='side-menu'>
-        <SideBar children={<ProductCard />} />
+        <SideBar />
+        <ProductCard />
       </div>
     </div>
   )

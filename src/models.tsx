@@ -1,12 +1,10 @@
-type Products = {
+export type Products = {
   name: string;
   description: string;
   price: number;
   image: string;
 };
 
-type foodCategories = {
+export type foodCategories = {
   category: string;
 }
-
-export type { Products, foodCategories };
