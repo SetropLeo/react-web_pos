@@ -7,4 +7,5 @@ export const Images = {
   meat: require('./images/meat.svg').default,
   pizza: require('./images/pizza.svg').default,
   forkKnifeSpoon: require('./images/forkKnifeSpoon.svg').default,
+  forkKnifePlate: require('./images/forkKnifePlate.svg').default,
 };
