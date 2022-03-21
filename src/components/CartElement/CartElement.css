@@ -1,0 +1,143 @@
+.CartElement-main-container {
+  width: 300px;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  margin: 15px 25px;
+  font-family: sans-serif;
+  border-bottom: 1px solid #EBEEF1;
+}
+
+.elementImage-subcontainer {
+  margin-right: 15px;
+}
+
+.elementImage {
+  width: 55px;
+  height: 55px;
+  border-radius: 5px;
+}
+
+.elementContent-subcontainer {
+  width: 70%;
+}
+
+.elementInfos-subcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.elementName {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 50;
+}
+
+.elementPrice {
+  margin: 0;
+  font-size: 13px;
+}
+
+.additionalInformation-subcontainer {
+  margin-top: 5px;
+}
+
+.elementSubPrice,
+.elementSize {
+  font-size: 12px;
+  margin: 4px 0 0 0;
+}
+
+.productAmount-subcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.productAmount {
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+.productAmount::selection {
+  background-color: #FFFFFF;
+}
+
+.minus-sign,
+.plus-sign {
+  width: 25px;
+  height: 25px;
+  background-color: #EBEEF1;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: #888888;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.minus-sign::selection,
+.plus-sign::selection {
+  background-color: #EBEEF1;
+}
+
+.removeElement-subcontainer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  background-color: #EBEEF1;
+  width: 300px;
+  height: 110px;
+  opacity: .9;
+}
+
+.removeElement-left-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.removeElementImage {
+  width: 60px;
+}
+
+.removeElement {
+  margin-left: -10px;
+}
+
+.removeElement-right-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.no-removeProduct,
+.yes-removeProduct {
+  width: 50px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.no-removeProduct {
+  background-color: #FFFFFF;
+  border: 1px solid #DADEE3;
+}
+
+.yes-removeProduct {
+  background-color: #FF5B57;
+  color: #FFFFF4;
+  border: 1px solid #F69A99;
+}
