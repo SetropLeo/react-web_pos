@@ -1,0 +1,63 @@
+.orderMenu-main-container {
+  width: 325px;
+  font-family: sans-serif;
+}
+
+.orderInfos-subcontainer {
+  background-color: #6C757D;
+  color: #FFFFEA;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  margin: 0;
+}
+
+.orderInfos-subcontainer p {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.orderInfos-subcontainer p img {
+  width: 40px;
+  filter: invert(1);
+}
+
+.orderInfos-subcontainer span {
+  background-color: #20252A;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.orderInfos-subcontainer span b {
+  margin-left: 2px;
+}
+
+.menuOptions-subcontainer {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #DEE2E6;
+  width: 100%;
+  cursor: pointer;
+}
+
+.menuOptions-subcontainer span {
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: .7;
+}
+
+.menuOptions-subcontainer span.active {
+  background-color: #FFFFFF;
+  opacity: 1;
+}

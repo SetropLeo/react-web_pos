@@ -18,3 +18,7 @@
     </td>
   </tr>
 </table>
+
+
+TO-DO
+-> COMPONENTIZAR OS (menuOptions-subcontainer span) para possibilitar testes
