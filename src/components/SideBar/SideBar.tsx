@@ -1,19 +1,26 @@
 import React from 'react';
 import './SideBar.css';
 import { Images } from '../../Images';
+import { MenuItem } from './MenuItem';
 
 const SideBar: React.FC = () => {
-  const [category, setCategory] = React.useState<string>('All Dishes');
+  const [list, setList] = React.useState<MenuItem[]>([
+    { icon: Images.forkKnifeSpoon, title: 'All Dishes', selected: true },
+    { icon: Images.meat, title: 'Meat', selected: false },
+    { icon: Images.burger, title: 'Burger', selected: false },
+    { icon: Images.pizza, title: 'Pizza', selected: false },
+    { icon: Images.drinks, title: 'Drinks', selected: false },
+    { icon: Images.desserts, title: 'Desserts', selected: false },
+    { icon: Images.snacks, title: 'Snacks', selected: false },
+  ]);
 
-  const Mock = [
-    { image: Images.forkKnifeSpoon, title: 'All Dishes', state: true },
-    { image: Images.meat, title: 'Meat', state: false },
-    { image: Images.burger, title: 'Burger', state: false },
-    { image: Images.pizza, title: 'Pizza', state: false },
-    { image: Images.drinks, title: 'Drinks', state: false },
-    { image: Images.desserts, title: 'Desserts', state: false },
-    { image: Images.snacks, title: 'Snacks', state: false },
-  ];
+  function selectMenuItem(indexSelected: number) {
+    const listMapped = list.map((listItem, index) => {
+      listItem.selected = index === indexSelected
+      return listItem;
+    })
+    setList(listMapped);
+  }
 
   return (
     <div style={{ backgroundColor: '#E9ECEF' }}>
@@ -22,10 +29,10 @@ const SideBar: React.FC = () => {
           <img src={Images.pineDine} alt="restaurant-logo" />
           <p>Pine & Dine</p>
         </div>
-        {Mock.map((item) => {
+        {list.map((item: MenuItem, index: number) => {
           return (
-            <div key={item.title} className={`category-subcontainer ${item.title === category ? 'active' : ''}`} onClick={() => setCategory(item.title)}>
-              <img src={item.image} alt="restaurant-logo" />
+            <div key={item.title} className={`category-subcontainer ${item.selected === true ? 'active' : ''}`} onClick={() => selectMenuItem(index)}>
+              <img src={item.icon} alt="restaurant-logo" />
               <p>{item.title}</p>
             </div>
           )
