@@ -1,10 +1,11 @@
 .CartElement-main-container {
-  width: 300px;
-  height: 110px;
+  width: 295px;
+  min-height: 90px;
   display: flex;
   flex-direction: row;
   margin: 15px 25px;
   font-family: sans-serif;
+  padding-bottom: 20px;
   border-bottom: 1px solid #EBEEF1;
 }
 
@@ -90,7 +91,7 @@
   flex-direction: row;
   position: absolute;
   background-color: #EBEEF1;
-  width: 300px;
+  width: 280px;
   height: 110px;
   opacity: .9;
 }

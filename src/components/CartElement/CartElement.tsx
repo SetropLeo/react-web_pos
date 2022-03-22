@@ -33,6 +33,7 @@ const CartElement = () => {
           <div className="additionalInformation-subcontainer">
             <p className="elementSubPrice">$12.99</p>
             <p className="elementSize">- size: large</p>
+            <p className="elementSize">- observation: large</p>
           </div>
           <div className="productAmount-subcontainer">
             <p className="minus-sign" onClick={() => setAmount(amount - 1)}>
