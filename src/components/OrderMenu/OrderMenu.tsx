@@ -22,7 +22,7 @@ const OrderMenu = () => {
         <span className={`${menuOption === 'Order History' ? 'active' : ''}`} onClick={() => setMenuOption('Order History')}>Order History(0)</span>
       </div>
       {menuOption === 'New Order' && (
-        <div>
+        <div className='order-subcontainer'>
           <CartElement />
           <CartElement />
           <CartElement />

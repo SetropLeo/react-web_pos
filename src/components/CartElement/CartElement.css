@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+
 .CartElement-main-container {
-  width: 295px;
+  width: 270px;
   min-height: 90px;
   display: flex;
   flex-direction: row;
   margin: 15px 25px;
-  font-family: sans-serif;
+  font-family: 'Open Sans';
   padding-bottom: 20px;
   border-bottom: 1px solid #EBEEF1;
 }
@@ -32,22 +35,28 @@
 
 .elementName {
   margin: 0;
-  font-size: 14px;
-  font-weight: 50;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .elementPrice {
   margin: 0;
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .additionalInformation-subcontainer {
   margin-top: 5px;
 }
 
-.elementSubPrice,
+.elementSubPrice {
+  font-size: 11px;
+  margin: 2px 0 0 0;
+  font-weight: 600;
+}
+
 .elementSize {
-  font-size: 12px;
+  font-size: 11px;
   margin: 4px 0 0 0;
 }
 
@@ -59,7 +68,8 @@
 }
 
 .productAmount {
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 11px;
   margin: 0 10px;
 }
 
@@ -69,8 +79,8 @@
 
 .minus-sign,
 .plus-sign {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   background-color: #EBEEF1;
   justify-content: center;
   display: flex;
@@ -78,6 +88,7 @@
   color: #888888;
   font-size: 20px;
   cursor: pointer;
+  border-radius: 3px;
   margin: 0;
 }
 
@@ -91,9 +102,10 @@
   flex-direction: row;
   position: absolute;
   background-color: #EBEEF1;
-  width: 280px;
+  min-width: 270px;
   height: 110px;
   opacity: .9;
+  margin: 0;
 }
 
 .removeElement-left-container {
@@ -109,7 +121,9 @@
 }
 
 .removeElement {
-  margin-left: -10px;
+  margin-left: -15px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .removeElement-right-container {
@@ -135,10 +149,15 @@
 .no-removeProduct {
   background-color: #FFFFFF;
   border: 1px solid #DADEE3;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .yes-removeProduct {
   background-color: #FF5B57;
   color: #FFFFF4;
   border: 1px solid #F69A99;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 1;
 }

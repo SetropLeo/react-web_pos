@@ -1,0 +1,9 @@
+.food-options-subcontainer {
+  width: 83%;
+  float: left;
+}
+
+.food-order-subcontainer {
+  width: 17%;
+  float: right;
+}
