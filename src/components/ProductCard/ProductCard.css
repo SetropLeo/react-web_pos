@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -5,8 +7,8 @@ ul {
 }
 
 .productcards-main-container {
+  font-family: 'Open Sans';
   background-color: #E9ECEF;
-  font-family: sans-serif;
   display: flex;
   justify-content: center;
 }
@@ -39,23 +41,24 @@ ul {
 }
 
 .productName {
-  color: #000000;
   font-weight: 600;
-  font-size: 12px;
-  margin-bottom: 0;
+  font-size: 13px;
+  color: #000000;
+  margin: 0;
 }
 
 .productDescription {
-  font-weight: 400;
-  color: #6F7578;
   font-size: 12px;
-  margin: 7px auto 12px auto;
+  font-weight: 600;
+  color: #6F7578;
   opacity: .8;
+  margin: 4px auto 12px auto;
 }
 
 .productPrice {
-  color: #000000;
   font-size: 13px;
+  font-weight: 600;
+  color: #000000;
   letter-spacing: .4px;
   margin: 0;
 }
