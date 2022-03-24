@@ -1,5 +1,5 @@
 .orderMenu-main-container {
-  width: 320px;
+  min-width: 310px;
   font-family: sans-serif;
 }
 
@@ -60,4 +60,9 @@
 .menuOptions-subcontainer span.active {
   background-color: #FFFFFF;
   opacity: 1;
+}
+
+.order-subcontainer {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

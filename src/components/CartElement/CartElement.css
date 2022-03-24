@@ -1,5 +1,5 @@
 .CartElement-main-container {
-  width: 295px;
+  width: 250px;
   min-height: 90px;
   display: flex;
   flex-direction: row;
@@ -38,16 +38,20 @@
 
 .elementPrice {
   margin: 0;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .additionalInformation-subcontainer {
   margin-top: 5px;
 }
 
-.elementSubPrice,
+.elementSubPrice {
+  font-size: 11px;
+  margin: 4px 0 0 0;
+}
+
 .elementSize {
-  font-size: 12px;
+  font-size: 10px;
   margin: 4px 0 0 0;
 }
 
@@ -91,7 +95,7 @@
   flex-direction: row;
   position: absolute;
   background-color: #EBEEF1;
-  width: 280px;
+  width: 245px;
   height: 110px;
   opacity: .9;
 }
@@ -109,7 +113,9 @@
 }
 
 .removeElement {
-  margin-left: -10px;
+  margin-left: -15px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .removeElement-right-container {

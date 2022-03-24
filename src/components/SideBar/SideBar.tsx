@@ -16,21 +16,19 @@ const SideBar: React.FC = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: '#E9ECEF' }}>
-      <div className="sidebar-main-container">
-        <div className="business-subcontainer">
-          <img src={Images.pineDine} alt="restaurant-logo" />
-          <p>Pine & Dine</p>
-        </div>
-        {Mock.map((item) => {
-          return (
-            <div key={item.title} className={`category-subcontainer ${item.title === category ? 'active' : ''}`} onClick={() => setCategory(item.title)}>
-              <img src={item.image} alt="restaurant-logo" />
-              <p>{item.title}</p>
-            </div>
-          )
-        })}
+    <div className="sidebar-main-container">
+      <div className="business-subcontainer">
+        <img src={Images.pineDine} alt="restaurant-logo" />
+        <p>Pine & Dine</p>
       </div>
+      {Mock.map((item) => {
+        return (
+          <div key={item.title} className={`category-subcontainer ${item.title === category ? 'active' : ''}`} onClick={() => setCategory(item.title)}>
+            <img src={item.image} alt="restaurant-logo" />
+            <p>{item.title}</p>
+          </div>
+        )
+      })}
     </div>
   );
 };
