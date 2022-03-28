@@ -6,7 +6,7 @@ import './Catalog.css';
 
 const DishesCatalog: React.FC = () => {
   return (
-    <div className='main-container'>
+    <div className='catalog-main-container'>
       <div className='food-options-subcontainer'>
         <SideBar />
         <ProductCard />
