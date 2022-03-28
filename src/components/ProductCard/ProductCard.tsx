@@ -6,6 +6,7 @@ type Products = {
   description: string;
   price: number;
   image: string;
+  category: string[];
 };
 
 const ProductCard: React.FC = () => {
@@ -18,7 +19,7 @@ const ProductCard: React.FC = () => {
   }, [])
 
   return (
-    <div className='productcards-main-container'>
+    <div className='productCards-main-container'>
       <div className='foods-container'>
         {foods.length > 0 && foods.map((product: Products) => {
           return (

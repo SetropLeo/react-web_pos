@@ -19,7 +19,7 @@ const OrderMenu = () => {
       </div>
       <div className='menuOptions-subcontainer'>
         <span className={`${menuOption === 'New Order' ? 'active' : ''}`} onClick={() => setMenuOption('New Order')}>New Order (5)</span>
-        <span className={`${menuOption === 'Order History' ? 'active' : ''}`} onClick={() => setMenuOption('Order History')}>Order History(0)</span>
+        <span className={`${menuOption === 'Order History' ? 'active' : ''}`} onClick={() => setMenuOption('Order History')}>Order History (0)</span>
       </div>
       {menuOption === 'New Order' && (
         <div className='order-subcontainer'>

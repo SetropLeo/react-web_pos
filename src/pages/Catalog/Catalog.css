@@ -1,9 +1,13 @@
+.catalog-main-container {
+  display: flex;
+}
+
 .food-options-subcontainer {
-  width: 83%;
+  width: 84%;
   float: left;
+  overflow-y: scroll;
 }
 
 .food-order-subcontainer {
-  width: 17%;
   float: right;
 }
