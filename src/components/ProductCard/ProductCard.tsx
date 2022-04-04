@@ -42,7 +42,7 @@ const ProductCard: React.FC = ({ activeFood }: any) => {
                     </p>
                   </div>
                   <div className='addItems-container'>
-                  <button className='cancel-button'>Cancel</button>
+                  <button className='cancel-button' onClick={() => closeModal()}>Cancel</button>
                   <button className='addToCart-button'>Add to cart +</button>
                   </div>
                   <h3 onClick={() => closeModal()}>CLOSE BUTTON</h3>
