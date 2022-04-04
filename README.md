@@ -20,5 +20,7 @@
 </table>
 
 
-TO-DO
--> COMPONENTIZAR OS (menuOptions-subcontainer span) para possibilitar testes
+TO_DO
+-> COMPONENTIZAR 
+    -> menuOptions-subcontainer span
+    -> Modal ProductCart
