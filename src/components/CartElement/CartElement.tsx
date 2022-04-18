@@ -1,15 +1,16 @@
 import React from 'react';
 import { Images } from '../../Images';
-import pork from '../../images/product-2.jpg'
 import './CartElement.css';
 
-const CartElement = () => {
-  const [amount, setAmount] = React.useState<number>(1);
+const CartElement = ({ food }: any) => {
 
-  if (amount >= 0)
+  function setAmount(amount: any) {
+  }
+
+  if (food.amount >= 0)
     return (
       <div className="CartElement-main-container">
-        {amount === 0 &&
+        {food.amount === 0 &&
           (
             <div className='removeElement-subcontainer'>
               <div className='removeElement-left-container'>
@@ -17,29 +18,29 @@ const CartElement = () => {
                 <p className='removeElement'>Remove this item?</p>
               </div>
               <div className="removeElement-right-container">
-                <p className="no-removeProduct" onClick={() => setAmount(amount + 1)}>No</p>
-                <p className="yes-removeProduct" onClick={() => setAmount(amount - 1)}>Yes</p>
+                <p className="no-removeProduct" onClick={() => setAmount(food.amount + 1)}>No</p>
+                <p className="yes-removeProduct" onClick={() => setAmount(food.amount - 1)}>Yes</p>
               </div>
             </div>
           )}
         <div className="elementImage-subcontainer">
-          <img className="elementImage" src={pork} alt="Grill Pork Chop" />
+          <img className="elementImage" src={food.image} alt="Grill Pork Chop" />
         </div>
         <div className="elementContent-subcontainer">
           <div className="elementInfos-subcontainer">
-            <p className="elementName">Grill Pork Chop</p>
-            <p className="elementPrice">$12.99</p>
+            <p className="elementName">{food.name}</p>
+            <p className="elementPrice">${(food.price * food.amount).toFixed(2)}</p>
           </div>
           <div className="additionalInformation-subcontainer">
-            <p className="elementSubPrice">$12.99</p>
+            <p className="elementSubPrice">${food.price}</p>
             <p className="elementSize">- size: large</p>
           </div>
           <div className="productAmount-subcontainer">
-            <p className="minus-sign" onClick={() => setAmount(amount - 1)}>
+            <p className="minus-sign" onClick={() => setAmount(food.amount - 1)}>
               -
             </p>
-            <p className="productAmount">{amount}</p>
-            <p className="plus-sign" onClick={() => setAmount(amount + 1)}>
+            <p className="productAmount">{food.amount}</p>
+            <p className="plus-sign" onClick={() => setAmount(food.amount + 1)}>
               +
             </p>
           </div>

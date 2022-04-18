@@ -2,9 +2,12 @@ import React from 'react';
 import './OrderMenu.css';
 import { Images } from '../../Images';
 import CartElement from '../CartElement/CartElement';
+import { connect } from 'react-redux';
+import { FoodModel } from '../../models';
 
-const OrderMenu = () => {
-  const [menuOption, setMenuOption] = React.useState<string>('New Order');
+const OrderMenu = ({ foodCartList }: any) => {
+  const [orderMenuOption, setorderMenuOption] = React.useState<string>('New Order');
+  console.log(foodCartList)
 
   return (
     <div className='orderMenu-main-container'>
@@ -17,22 +20,23 @@ const OrderMenu = () => {
           Order: <b>#0056</b>
         </span>
       </div>
-      <div className='menuOptions-subcontainer'>
-        <span className={`${menuOption === 'New Order' ? 'active' : ''}`} onClick={() => setMenuOption('New Order')}>New Order (5)</span>
-        <span className={`${menuOption === 'Order History' ? 'active' : ''}`} onClick={() => setMenuOption('Order History')}>Order History (0)</span>
+      <div className='sideBarOptions-subcontainer'>
+        <span className={`${orderMenuOption === 'New Order' ? 'active' : ''}`} onClick={() => setorderMenuOption('New Order')}>New Order ({foodCartList ? foodCartList.length : 0})</span>
+        <span className={`${orderMenuOption === 'Order History' ? 'active' : ''}`} onClick={() => setorderMenuOption('Order History')}>Order History (0)</span>
       </div>
-      {menuOption === 'New Order' && (
-        <div className='order-subcontainer'>
-          <CartElement />
-          <CartElement />
-          <CartElement />
-          <CartElement />
-          <CartElement />
-        </div>
-      )}
-      {menuOption === 'Order History'}
+      <div className='order-subcontainer'>
+        {orderMenuOption === 'New Order' && foodCartList?.map((food: FoodModel, index: Number) => {
+          return (
+            <CartElement key={index} food={food} />
+          )
+        }
+        )}
+      </div>
+      {orderMenuOption === 'Order History'}
     </div>
   );
 };
 
-export default OrderMenu;
+const mapStateToProps = (state: any) => ({ foodCartList: state.orderMenuOption.foodCartList });
+
+export default connect(mapStateToProps)(OrderMenu);

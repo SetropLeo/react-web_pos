@@ -22,5 +22,5 @@
 
 TO_DO
 -> COMPONENTIZAR 
-    -> menuOptions-subcontainer span
+    -> sideBarOptions-subcontainer span
     -> Modal ProductCart
