@@ -1,7 +1,7 @@
 import { Images } from '../../Images';
 
 const INITIAL_STATE = {
-  activeFood: 'All Dishes',
+  foodType: 'All Dishes',
   foodOptions: [
     {
       icon: Images.forkKnifeSpoon,
@@ -34,11 +34,11 @@ const INITIAL_STATE = {
   ],
 };
 
-export default function menuOption(state = INITIAL_STATE, action: any) {
-  if (action.type === 'SET_FOODTYPE') {
+export default function sideBarOption(state = INITIAL_STATE, action: any) {
+  if (action.type === 'FILTER_FOOD') {
     return {
       ...state,
-      activeFood: action.title,
+      foodType: action.title,
     };
   }
   return state;

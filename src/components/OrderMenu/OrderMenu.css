@@ -38,7 +38,7 @@
   margin-left: 2px;
 }
 
-.menuOptions-subcontainer {
+.sideBarOptions-subcontainer {
   display: flex;
   justify-content: space-evenly;
   font-size: 12px;
@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 
-.menuOptions-subcontainer span {
+.sideBarOptions-subcontainer span {
   width: 100%;
   height: 40px;
   align-items: center;
@@ -57,7 +57,7 @@
   opacity: .7;
 }
 
-.menuOptions-subcontainer span.active {
+.sideBarOptions-subcontainer span.active {
   background-color: #FFFFFF;
   opacity: 1;
 }
@@ -65,4 +65,5 @@
 .order-subcontainer {
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100vh;
 }

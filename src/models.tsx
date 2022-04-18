@@ -1,4 +1,4 @@
-export type Foods = {
+export type FoodModel = {
   name: string;
   description: string;
   price: number;

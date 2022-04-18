@@ -1,4 +1,4 @@
-export class MenuItem {
+export class SideMenuItem {
   icon: any;
   title: string;
 
