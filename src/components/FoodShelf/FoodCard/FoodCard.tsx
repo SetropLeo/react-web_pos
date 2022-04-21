@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as modalActions from '../../store/actions/modalFoodActions';
-import './ProductCard.css'
+import * as modalActions from '../../../store/actions/modalFoodActions';
+import './FoodCard.css'
 
 const ProductCard = ({ setModalFood, food }: any,) => {
 
@@ -20,7 +20,6 @@ const ProductCard = ({ setModalFood, food }: any,) => {
 };
 
 
-const mapStateToProps = (state: any) => ({  });
 const mapDispatchToProps = (dispatch: any) => bindActionCreators(modalActions, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);
+export default connect(null, mapDispatchToProps)(ProductCard);

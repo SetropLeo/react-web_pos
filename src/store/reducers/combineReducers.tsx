@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import sideBarOption from './sideBarReducer';
-import modalFoodOption from './modalFoodReducer';
-import orderMenuOption from './orderMenuReducer';
+import modalFoodOption from './foodModalReducer';
+import orderMenuOption from './cartMenuReducer';
 
 export default combineReducers({
   sideBarOption,

@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as modalActions from '../../store/actions/modalFoodActions';
-import FoodModal from '../FoodModal/FoodModal';
-import ProductCard from '../ProductCard/ProductCard';
-import { FoodModel } from '../../models';
-import './ProductList.css'
+import * as modalActions from '../../../store/actions/modalFoodActions';
+import FoodModal from '../../FoodModal/FoodModal';
+import ProductCard from '../FoodCard/FoodCard';
+import { Food } from '../../../models';
+import './FoodList.css'
 
 const ProductList: React.FC = ({ activeType, modalFood }: any) => {
-  const [foods, setFoods] = React.useState<FoodModel[]>([]);
+  const [foods, setFoods] = React.useState<Food[]>([]);
 
   React.useEffect(() => {
     fetch('http://localhost:3001/products')
@@ -21,10 +21,10 @@ const ProductList: React.FC = ({ activeType, modalFood }: any) => {
     <div className='foodCards-container'>
       <div className='foodCards-grid'>
         {modalFood !== '' && <FoodModal />}
-        {foods.length > 0 && foods.map((food: FoodModel) => {
+        {foods.length > 0 && foods.map((food: Food, index: number) => {
           if (food.category.includes(activeType))
             return (
-              <ProductCard food={food} />
+              <ProductCard food={food} key={index} />
             );
           else return null;
         })}

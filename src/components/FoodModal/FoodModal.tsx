@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { FoodModel } from '../../models';
+import { Food } from '../../models';
 import './FoodModal.css'
 
 
 const FoodModal = ({ modalFood, closeModal, addFoodToCart }: any) => {
-  const [amount, setAmount] = React.useState<number>(1);
+  const [quantity, setQuantity] = React.useState<number>(1);
 
 
   function addToCart() {
-    addFoodToCart(modalFood, amount);
+    addFoodToCart(modalFood, quantity);
     closeModal();
   }
 
@@ -23,11 +23,11 @@ const FoodModal = ({ modalFood, closeModal, addFoodToCart }: any) => {
           <div className='foodModal-right-content'>
             <h1 className='foodModal-name'>{modalFood?.name}</h1>
             <h2 className='foodModal-description'>{modalFood?.description}</h2>
-            <p className='foodModal-price'>${modalFood?.price * amount}</p>
+            <p className='foodModal-price'>${modalFood?.price * quantity}</p>
             <div className="productAmount-subcontainer">
-              <p className="minus-sign" onClick={() => { if (amount > 1) setAmount(amount - 1) }}>-</p>
-              <p className="productAmount">{amount}</p>
-              <p className="plus-sign" onClick={() => setAmount(amount + 1)}>+</p>
+              <p className="minus-sign" onClick={() => { if (quantity > 1) setQuantity(quantity - 1) }}>-</p>
+              <p className="productAmount">{quantity}</p>
+              <p className="plus-sign" onClick={() => setQuantity(quantity + 1)}>+</p>
             </div>
             <div className='addItems-container'>
               <button className='cancel-button' onClick={() => closeModal()}>Cancel</button>
@@ -46,7 +46,7 @@ const mapStateToProps = (state: any) => ({ modalFood: state.modalFoodOption.moda
 const mapDispatchToProps = (dispatch: any) => (
   {
     closeModal: () => dispatch({ type: 'CLEAR_MODAL_FOOD' }),
-    addFoodToCart: (food: FoodModel, amount: Number) => dispatch({ type: 'ADD_FOOD_TO_CART', food, amount }),
+    addFoodToCart: (food: Food, quantity: Number) => dispatch({ type: 'ADD_FOOD_TO_CART', food, quantity }),
   }
 );
 

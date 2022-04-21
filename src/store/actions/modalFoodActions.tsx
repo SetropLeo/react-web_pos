@@ -11,12 +11,12 @@ export function clearModalFood() {
   };
 };
 
-export function addFoodToCart(food: any, amount: any) {
+export function addFoodToCart(food: any, quantity: any) {
   return {
     type: 'ADD_FOOD_TO_CART',
     food: {
       ...food,
-      amount,
+      quantity,
     },
   };
 }
