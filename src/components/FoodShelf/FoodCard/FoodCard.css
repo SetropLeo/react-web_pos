@@ -49,21 +49,6 @@
 }
 
 
-
-
-.foodModal-container {
-  position: absolute;
-  top: -450px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
 .foodModal-content {
   height: 305px;
   width: 800px;

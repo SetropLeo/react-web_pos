@@ -14,7 +14,7 @@ const FoodModal = ({ modalFood, closeModal, addFoodToCart }: any) => {
   }
 
   return (
-    <div className='foodModal-container' onClick={() => closeModal()}>
+    <div className={`foodModal-container ${modalFood !== '' ? 'active' : 'hidden'}`} onClick={() => closeModal()}>
       <div className='foodModal-content' onClick={(event) => event.stopPropagation()}>
         <div className='foodModal-left'>
           <img src={modalFood?.image} alt="" />

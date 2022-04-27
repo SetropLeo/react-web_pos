@@ -20,7 +20,7 @@ const ProductList: React.FC = ({ activeType, modalFood }: any) => {
   return (
     <div className='foodCards-container'>
       <div className='foodCards-grid'>
-        {modalFood !== '' && <FoodModal />}
+        <FoodModal />
         {foods.length > 0 && foods.map((food: Food, index: number) => {
           if (food.category.includes(activeType))
             return (
