@@ -5,6 +5,7 @@ import CartElement from '../CartElement/CartElement';
 import { connect } from 'react-redux';
 import { Food } from '../../../models';
 import store from '../../../store/store';
+import OrderSubmit from '../OrderSubmit/OrderSubmit';
 
 const CartMenu = () => {
   const [cartMenuOption, setCartMenuOption] = React.useState<string>('New Order');
@@ -35,7 +36,9 @@ const CartMenu = () => {
             <CartElement key={index} food={food} index={index} />
           )
         }
-        )}
+        )
+        }
+        {cartMenuOption === 'New Order' && <OrderSubmit />}
       </div>
       {cartMenuOption === 'Order History'}
     </div>

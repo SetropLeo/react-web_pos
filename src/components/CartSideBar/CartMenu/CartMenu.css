@@ -63,7 +63,6 @@
 }
 
 .order-subcontainer {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 100vh;
+  overflow: scroll;
+  height: 73vh;
 }

@@ -9,10 +9,8 @@
 
 .foodCards-container {
   background-color: #E9ECEF;
-  width: 90%;
   height: 100vh;
-  float: right;
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 .foodCards-container::-webkit-scrollbar {

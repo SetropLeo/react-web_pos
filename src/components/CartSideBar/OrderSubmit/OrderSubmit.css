@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+/* MAIN CONTAINER */
+
+.orderSubmit-container {
+  width: 310px;
+  height: 145px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+/* INFOS */
+.orderSubmit-infos {
+  padding: 0px 22px;
+  margin-bottom: 10px;
+}
+
+.orderSubmit-element {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.orderSubmit-element p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.orderSubmit-element p.subtotal-value {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.orderSubmit-element p.taxes-value {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.orderSubmit-element p.total-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+
+/* BUTTONS */
+.orderSubmit-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.orderSubmit-buttons button {
+  width: 90px;
+  height: 66px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #E9ECEF;
+  cursor: pointer;
+}
+
+.orderSubmit-buttons p {
+  font-weight: 500;
+}
+
+.orderSubmit-buttons img {
+  width: 15px;
+  height: 15px;
+}
+
+.orderSubmit-buttons button.submit {
+  width: 125px !important;
+  background-color: #00ACAC;
+  color: white;
+}
+
+.orderSubmit-buttons button.submit img {
+  filter: invert(1);
+}

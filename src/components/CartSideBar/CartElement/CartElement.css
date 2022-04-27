@@ -2,11 +2,11 @@
 
 
 .CartElement-main-container {
-  width: 270px;
+  width: 250px;
   min-height: 90px;
   display: flex;
   flex-direction: row;
-  margin: 15px 25px;
+  margin: 15px auto 15px 25px;
   font-family: 'Open Sans';
   padding-bottom: 20px;
   border-bottom: 1px solid #EBEEF1;
@@ -24,7 +24,7 @@
 }
 
 .elementContent-subcontainer {
-  width: 70%;
+  width: 100%;
 }
 
 .elementInfos-subcontainer {
