@@ -34,7 +34,7 @@ export default function orderMenuOption(state = INITIAL_STATE_ORDER_MENU, action
     copyCartList.splice(action.index, 1);
     console.log(state.cartList)
     return {
-      cartList: copyCartList,
+      cartList: [...copyCartList],
     }
   }
   return state;

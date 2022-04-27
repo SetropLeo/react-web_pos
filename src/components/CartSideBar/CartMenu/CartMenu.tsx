@@ -4,9 +4,15 @@ import { Images } from '../../../Images';
 import CartElement from '../CartElement/CartElement';
 import { connect } from 'react-redux';
 import { Food } from '../../../models';
+import store from '../../../store/store';
 
-const CartMenu = ({ cartList }: any) => {
+const CartMenu = () => {
   const [cartMenuOption, setCartMenuOption] = React.useState<string>('New Order');
+  const [cartMenuList, setCartMenuList] = React.useState<Food[]>([]);
+
+  store.subscribe(() => {
+    setCartMenuList(store.getState().orderMenuOption.cartList);
+  });
 
   return (
     <div className='orderMenu-main-container'>
@@ -20,11 +26,11 @@ const CartMenu = ({ cartList }: any) => {
         </span>
       </div>
       <div className='sideBarOptions-subcontainer'>
-        <span className={`${cartMenuOption === 'New Order' ? 'active' : ''}`} onClick={() => setCartMenuOption('New Order')}>New Order ({cartList ? cartList.length : 0})</span>
+        <span className={`${cartMenuOption === 'New Order' ? 'active' : ''}`} onClick={() => setCartMenuOption('New Order')}>New Order ({cartMenuList.length})</span>
         <span className={`${cartMenuOption === 'Order History' ? 'active' : ''}`} onClick={() => setCartMenuOption('Order History')}>Order History (0)</span>
       </div>
       <div className='order-subcontainer'>
-        {cartMenuOption === 'New Order' && cartList?.map((food: Food, index: number) => {
+        {cartMenuOption === 'New Order' && cartMenuList?.map((food: Food, index: number) => {
           return (
             <CartElement key={index} food={food} index={index} />
           )

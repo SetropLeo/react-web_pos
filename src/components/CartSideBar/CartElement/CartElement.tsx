@@ -2,19 +2,22 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Images } from '../../../Images';
 import './CartElement.css';
+import store from '../../../store/store';
 
 const CartElement = ({ food, index, increaseFood, decreaseFood, cartList, removeFoodFromCart }: any) => {
 
   const [quantity, setQuantity] = useState<number>(cartList[index].quantity);
 
+  store.subscribe(() => {
+    setQuantity(store.getState().orderMenuOption.cartList[index]?.quantity);
+  });
+
   function increaseQuantity() {
     increaseFood(index);
-    setQuantity(cartList[index].quantity);
   }
 
   function decreaseQuantity() {
     decreaseFood(index);
-    setQuantity(cartList[index].quantity);
   }
 
   if (food.quantity >= 0)
