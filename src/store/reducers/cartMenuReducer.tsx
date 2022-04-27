@@ -18,7 +18,6 @@ export default function orderMenuOption(state = INITIAL_STATE_ORDER_MENU, action
   else if (action.type === 'FOOD_COUNTER_INCREASE') {
     const copyCartList = state.cartList;
     copyCartList[action.index].quantity += 1;
-    console.log(state.cartList)
     return {
       cartList: copyCartList,
     }
@@ -32,7 +31,6 @@ export default function orderMenuOption(state = INITIAL_STATE_ORDER_MENU, action
   } else if (action.type === 'REMOVE_FOOD_FROM_CART') {
     const copyCartList = state.cartList;
     copyCartList.splice(action.index, 1);
-    console.log(state.cartList)
     return {
       cartList: [...copyCartList],
     }
