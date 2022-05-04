@@ -10,9 +10,23 @@ export const INITIAL_STATE_ORDER_MENU: FoodsList = {
 
 export default function orderMenuOption(state = INITIAL_STATE_ORDER_MENU, action: any) {
   if (action.type === 'ADD_FOOD_TO_CART') {
-    action.food.quantity = action.quantity;
+    const copyCartList = state.cartList;
+    if (copyCartList.length > 0) {
+
+      const foodIndex = copyCartList.findIndex(food => food.name === action.food.name);
+
+      if (foodIndex >= 0) {
+        copyCartList[foodIndex].quantity += action.quantity
+      } else {
+        action.food.quantity = action.quantity;
+        copyCartList.push(action.food)
+      }
+    } else {
+      action.food.quantity = action.quantity;
+      copyCartList.push(action.food);
+    }
     return {
-      cartList: [...state.cartList, action.food]
+      cartList: [...copyCartList]
     }
   }
   else if (action.type === 'FOOD_COUNTER_INCREASE') {

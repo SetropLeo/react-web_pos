@@ -6,7 +6,7 @@ import store from '../../../store/store';
 
 const CartElement = ({ food, index, increaseFood, decreaseFood, cartList, removeFoodFromCart }: any) => {
 
-  const [quantity, setQuantity] = useState<number>(cartList[index].quantity);
+  const [quantity, setQuantity] = useState<number>(cartList[index]?.quantity);
 
   store.subscribe(() => {
     setQuantity(store.getState().orderMenuOption.cartList[index]?.quantity);
