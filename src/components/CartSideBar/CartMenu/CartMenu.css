@@ -62,7 +62,12 @@
   opacity: 1;
 }
 
-.order-subcontainer {
+.cartList-subcontainer {
   overflow: scroll;
   height: 73vh;
+}
+
+.orderList-subcontainer {
+  overflow: scroll;
+  height: 100vh;
 }
