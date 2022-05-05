@@ -10,18 +10,18 @@ import store from '../../../store/store';
 const OrderSubmit = () => {
 
   const [subTotal, setSubTotal] = React.useState<number>(0);
-  let contador: number;
+  let counter: number;
 
   store.subscribe(() => {
     calculateTotal();
   });
 
   function calculateTotal() {
-    contador = 0;
+    counter = 0;
     store.getState().orderMenuOption.cartList.forEach((food: Food) => {
-      contador += (food.price * food.quantity)
+      counter += (food.price * food.quantity)
     })
-    setSubTotal(contador)
+    setSubTotal(counter)
   }
 
   function submitOrder() {
