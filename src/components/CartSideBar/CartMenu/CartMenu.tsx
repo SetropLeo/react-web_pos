@@ -16,35 +16,37 @@ const CartMenu = () => {
   });
 
   return (
-    <div className='orderMenu-main-container'>
-      <div className='orderInfos-subcontainer'>
+    <div className="orderMenu-main-container">
+      <div className="orderInfos-subcontainer">
         <p>
-          <img src={Images.forkKnifePlate} alt='Order' />
+          <img src={Images.forkKnifePlate} alt="Order" />
           Table 01
         </p>
-        <span>
-          Order: <b>#0056</b>
+        <span>Order: <b>#0056</b></span>
+      </div>
+      <div className="sideBarOptions-subcontainer">
+        <span className={`${cartMenuOption === 'New Order' ? 'active' : ''}`} onClick={() => setCartMenuOption('New Order')}>
+          New Order ({cartMenuList.length})
+        </span>
+        <span className={`${cartMenuOption === 'Order History' ? 'active' : ''}`} onClick={() => setCartMenuOption('Order History')}>
+          Order History (0)
         </span>
       </div>
-      <div className='sideBarOptions-subcontainer'>
-        <span className={`${cartMenuOption === 'New Order' ? 'active' : ''}`} onClick={() => setCartMenuOption('New Order')}>New Order ({cartMenuList.length})</span>
-        <span className={`${cartMenuOption === 'Order History' ? 'active' : ''}`} onClick={() => setCartMenuOption('Order History')}>Order History (0)</span>
-      </div>
-      <div className='order-subcontainer'>
-        {cartMenuOption === 'New Order' && cartMenuList?.map((food: Food, index: number) => {
-          return (
-            <CartElement key={index} food={food} index={index} />
-          )
-        }
-        )
-        }
-        {cartMenuOption === 'New Order' && <OrderSubmit />}
-      </div>
-      {cartMenuOption === 'Order History'}
+      {cartMenuOption === 'New Order' && (
+        <div className="cartList-subcontainer">
+          {cartMenuList?.map((food: Food, index: number) => {
+            return <CartElement key={index} food={food} index={index} />
+          })}
+          <OrderSubmit />
+        </div>)}
+      {cartMenuOption === 'Order History' && (
+        <div className="orderList-subcontainer">
+
+        </div>)}
     </div>
   );
 };
 
-const mapStateToProps = (state: any) => ({ cartList: state.orderMenuOption.cartList });
+const mapStateToProps = (state: any) => ({cartList: state.orderMenuOption.cartList});
 
 export default connect(mapStateToProps)(CartMenu);
