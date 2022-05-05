@@ -18,14 +18,11 @@ const OrderSubmit = () => {
 
   function calculateTotal() {
     counter = 0;
-    store.getState().orderMenuOption.cartList.forEach((food: Food) => {
+
+    store.getState().cartMenuOption.cartList.forEach((food: Food) => {
       counter += (food.price * food.quantity)
     })
     setSubTotal(counter)
-  }
-
-  function submitOrder() {
-
   }
 
   return (
@@ -53,7 +50,7 @@ const OrderSubmit = () => {
           <img src={billIcon} alt="Bill" />
           <p>Bill</p>
         </button>
-        <button onClick={submitOrder} className='submit'>
+        <button onClick={undefined} className='submit'>
           <img src={checkMarkIcon} alt="Submit Order" />
           <p>Submit Order</p>
         </button>
@@ -62,6 +59,6 @@ const OrderSubmit = () => {
   )
 }
 
-const mapStateToProps = (state: any) => ({ cartList: state.orderMenuOption.cartList });
+const mapStateToProps = (state: any) => ({ cartList: state.cartMenuOption.cartList });
 
 export default connect(mapStateToProps)(OrderSubmit);

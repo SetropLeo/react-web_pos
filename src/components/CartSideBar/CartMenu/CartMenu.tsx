@@ -12,7 +12,7 @@ const CartMenu = () => {
   const [cartMenuList, setCartMenuList] = React.useState<Food[]>([]);
 
   store.subscribe(() => {
-    setCartMenuList(store.getState().orderMenuOption.cartList);
+    setCartMenuList(store.getState().cartMenuOption.cartList);
   });
 
   return (
@@ -47,6 +47,6 @@ const CartMenu = () => {
   );
 };
 
-const mapStateToProps = (state: any) => ({cartList: state.orderMenuOption.cartList});
+const mapStateToProps = (state: any) => ({cartList: state.cartMenuOption.cartList});
 
 export default connect(mapStateToProps)(CartMenu);

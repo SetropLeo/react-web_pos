@@ -8,7 +8,7 @@ export const INITIAL_STATE_ORDER_MENU: FoodsList = {
   cartList: []
 }
 
-export default function orderMenuOption(state = INITIAL_STATE_ORDER_MENU, action: any) {
+export default function cartMenuOption(state = INITIAL_STATE_ORDER_MENU, action: any) {
   if (action.type === 'ADD_FOOD_TO_CART') {
     const copyCartList = state.cartList;
     if (copyCartList.length > 0) {

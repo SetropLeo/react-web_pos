@@ -9,7 +9,7 @@ const CartElement = ({ food, index, increaseFood, decreaseFood, cartList, remove
   const [quantity, setQuantity] = useState<number>(cartList[index]?.quantity);
 
   store.subscribe(() => {
-    setQuantity(store.getState().orderMenuOption.cartList[index]?.quantity);
+    setQuantity(store.getState().cartMenuOption.cartList[index]?.quantity);
   });
 
   function increaseQuantity() {
@@ -63,7 +63,7 @@ const CartElement = ({ food, index, increaseFood, decreaseFood, cartList, remove
   else return null;
 };
 
-const mapStateToProps = (state: any) => ({ cartList: state.orderMenuOption.cartList });
+const mapStateToProps = (state: any) => ({ cartList: state.cartMenuOption.cartList });
 
 const mapDisPatchToProps = (dispatch: any) => (
   {
