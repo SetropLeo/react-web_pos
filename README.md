@@ -20,7 +20,7 @@
 </table>
 
 
-TO_DO
--> COMPONENTIZAR 
-    -> sideBarOptions-subcontainer span
-    -> Modal ProductCart
+TODO's
+    -> Separar em dois componentes o [New-Order] e o [Order-History]
+    -> Padronizar a forma de uso do Redux
+    -> Criar um componente de alert reutilizável.
