@@ -48,6 +48,10 @@ export default function cartMenuOption(state = INITIAL_STATE_ORDER_MENU, action:
     return {
       cartList: [...copyCartList],
     }
+  } else if (action.type === 'CLEAR_CART') {
+    return {
+      cartList: [],
+    }
   }
   return state;
 }
