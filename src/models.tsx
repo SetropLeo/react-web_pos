@@ -6,3 +6,8 @@ export type Food = {
   category: string[];
   quantity: number,
 };
+
+export type Order = {
+  id: number;
+  list: Food[];
+}
