@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Food } from '../../../models';
 import store from '../../../store/store';
 import OrderSubmit from '../OrderSubmit/OrderSubmit';
+import OrderElement from '../OrderElement/OrderElement';
 
 const CartMenu = () => {
   const [cartMenuOption, setCartMenuOption] = React.useState<string>('New Order');
@@ -41,12 +42,12 @@ const CartMenu = () => {
         </div>)}
       {cartMenuOption === 'Order History' && (
         <div className="orderList-subcontainer">
-
+          <OrderElement />
         </div>)}
     </div>
   );
 };
 
-const mapStateToProps = (state: any) => ({cartList: state.cartMenuOption.cartList});
+const mapStateToProps = (state: any) => ({ cartList: state.cartMenuOption.cartList });
 
 export default connect(mapStateToProps)(CartMenu);

@@ -25,6 +25,14 @@ const OrderSubmit = () => {
     setSubTotal(counter)
   }
 
+  function submitOrder() {
+    store.dispatch({ type: 'ADD_ORDER_TO_LIST', newOrder: { id: store.getState().orderMenuOption.orderList.length + 1, list: store.getState().cartMenuOption.cartList } });
+
+    store.dispatch({ type: 'CLEAR_CART' });
+
+    window.alert('Pedido enviado! Alert Provisório');
+  }
+
   return (
     <div className='orderSubmit-container'>
       <div className='orderSubmit-infos'>
@@ -50,7 +58,7 @@ const OrderSubmit = () => {
           <img src={billIcon} alt="Bill" />
           <p>Bill</p>
         </button>
-        <button onClick={undefined} className='submit'>
+        <button onClick={submitOrder} className='submit'>
           <img src={checkMarkIcon} alt="Submit Order" />
           <p>Submit Order</p>
         </button>
