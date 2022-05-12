@@ -1,0 +1,78 @@
+.individualOrder-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  font-family: 'Open Sans';
+  padding: 15px 15px;
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 10px auto 15px auto;
+}
+
+.individualFood-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.individualFood-container img::after {
+  position: absolute;
+  top: 0;
+  background-color: black;
+}
+
+.individualFood-container img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 5px;
+  padding-right: 5px;
+}
+
+.individualFood-infos {
+  display: flex;
+  flex-direction: row;
+}
+
+.individualFood-infos p {
+  padding: 0 2px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  border-right: 1px solid #eee;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.food-name {
+  width: 125px;
+  text-align: center;
+}
+
+.food-quantity {
+  width: 25px;
+}
+
+.food-price {
+  width: 60px;
+}
+
+.totalPrice-container {
+  margin-top: 10px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px dashed black;
+}
+
+.total-price-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.total-price-value {
+  font-size: 12px;
+  font-weight: 600;
+}
