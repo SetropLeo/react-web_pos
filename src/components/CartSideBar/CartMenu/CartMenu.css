@@ -68,6 +68,6 @@
 }
 
 .orderList-subcontainer {
-  overflow: scroll;
+  overflow: hidden;
   height: 100vh;
 }

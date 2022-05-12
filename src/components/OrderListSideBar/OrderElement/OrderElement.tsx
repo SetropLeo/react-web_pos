@@ -26,7 +26,7 @@ const OrderElement = () => {
             })}
             <div className='totalPrice-container'>
               <p className='total-price-title'>Total Price: </p>
-              <p className='total-price-value'>${order.totalPrice}</p>
+              <p className='total-price-value'>${Math.round(order.totalPrice)}</p>
             </div>
           </div>
         )
