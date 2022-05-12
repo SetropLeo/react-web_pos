@@ -1,4 +1,4 @@
-# web-pos
+# POINT OF SALE - REACT APP (WEB)
 
 <table>
   <thread>
@@ -19,8 +19,7 @@
   </tr>
 </table>
 
-
-TODO's
-    -> Separar em dois componentes o [New-Order] e o [Order-History]
-    -> Padronizar a forma de uso do Redux
-    -> Criar um componente de alert reutilizável.
+# TO-DO-List
+    - Separar em dois componentes o [New-Order] e o [Order-History].
+    - Padronizar a forma de uso do Redux.
+    - Criar um componente de alert reutilizável.
