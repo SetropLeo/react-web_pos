@@ -26,7 +26,14 @@ const OrderSubmit = () => {
   }
 
   function submitOrder() {
-    store.dispatch({ type: 'ADD_ORDER_TO_LIST', newOrder: { id: store.getState().orderMenuOption.orderList.length + 1, list: store.getState().cartMenuOption.cartList } });
+    store.dispatch({
+      type: 'ADD_ORDER_TO_LIST',
+      newOrder: {
+        id: store.getState().orderMenuOption.orderList.length + 1,
+        list: store.getState().cartMenuOption.cartList,
+        totalPrice: subTotal,
+      }
+    });
 
     store.dispatch({ type: 'CLEAR_CART' });
 

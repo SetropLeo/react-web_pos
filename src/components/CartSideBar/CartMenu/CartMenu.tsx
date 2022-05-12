@@ -2,18 +2,19 @@ import React from 'react';
 import './CartMenu.css';
 import { Images } from '../../../Images';
 import CartElement from '../CartElement/CartElement';
-import { connect } from 'react-redux';
-import { Food } from '../../../models';
+import { Food, Order } from '../../../models';
 import store from '../../../store/store';
 import OrderSubmit from '../OrderSubmit/OrderSubmit';
-import OrderElement from '../OrderElement/OrderElement';
+import OrderElement from '../../OrderListSideBar/OrderElement/OrderElement';
 
 const CartMenu = () => {
   const [cartMenuOption, setCartMenuOption] = React.useState<string>('New Order');
   const [cartMenuList, setCartMenuList] = React.useState<Food[]>([]);
+  const [orderMenuList, setOrderMenuList] = React.useState<Order[]>([]);
 
   store.subscribe(() => {
     setCartMenuList(store.getState().cartMenuOption.cartList);
+    setOrderMenuList(store.getState().orderMenuOption.orderList);
   });
 
   return (
@@ -30,7 +31,7 @@ const CartMenu = () => {
           New Order ({cartMenuList.length})
         </span>
         <span className={`${cartMenuOption === 'Order History' ? 'active' : ''}`} onClick={() => setCartMenuOption('Order History')}>
-          Order History (0)
+          Order History ({orderMenuList.length})
         </span>
       </div>
       {cartMenuOption === 'New Order' && (
@@ -48,6 +49,5 @@ const CartMenu = () => {
   );
 };
 
-const mapStateToProps = (state: any) => ({ cartList: state.cartMenuOption.cartList });
 
-export default connect(mapStateToProps)(CartMenu);
+export default CartMenu;

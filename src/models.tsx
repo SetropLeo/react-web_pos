@@ -10,4 +10,5 @@ export type Food = {
 export type Order = {
   id: number;
   list: Food[];
+  totalPrice: number;
 }
