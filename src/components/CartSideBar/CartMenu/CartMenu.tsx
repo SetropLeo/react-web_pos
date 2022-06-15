@@ -6,16 +6,23 @@ import { Food, Order } from '../../../models';
 import store from '../../../store/store';
 import OrderSubmit from '../OrderSubmit/OrderSubmit';
 import OrderElement from '../../OrderListSideBar/OrderElement/OrderElement';
+import { OrderService } from '../../../services/Order.service';
 
 const CartMenu = () => {
   const [cartMenuOption, setCartMenuOption] = React.useState<string>('New Order');
   const [cartMenuList, setCartMenuList] = React.useState<Food[]>([]);
   const [orderMenuList, setOrderMenuList] = React.useState<Order[]>([]);
+  const [orderNumber, setOrderNumber] = React.useState<number>(0);
+  const OrderServices = new OrderService();
 
   store.subscribe(() => {
     setCartMenuList(store.getState().cartMenuOption.cartList);
-    setOrderMenuList(store.getState().orderMenuOption.orderList);
+    // setOrderMenuList(store.getState().orderMenuOption.orderList);
   });
+
+  React.useEffect(() => {
+    OrderServices.getOrdersLength().then((response) => setOrderNumber(response))
+  })
 
   return (
     <div className="orderMenu-main-container">
@@ -24,7 +31,7 @@ const CartMenu = () => {
           <img src={Images.forkKnifePlate} alt="Order" />
           Table 01
         </p>
-        <span>Order: <b>#0056</b></span>
+        <span>Order: <b>#{orderNumber}</b></span>
       </div>
       <div className="sideBarOptions-subcontainer">
         <span className={`${cartMenuOption === 'New Order' ? 'active' : ''}`} onClick={() => setCartMenuOption('New Order')}>
