@@ -1,12 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Food } from '../../models';
+import { Food2 } from '../../models';
 import './FoodModal.css'
 
 
 const FoodModal = ({ modalFood, closeModal, addFoodToCart }: any) => {
   const [quantity, setQuantity] = React.useState<number>(1);
-
 
   function onClickAddToCart() {
     addFoodToCart(modalFood, quantity);
@@ -52,7 +51,7 @@ const mapStateToProps = (state: any) => ({ modalFood: state.modalFoodOption.moda
 const mapDispatchToProps = (dispatch: any) => (
   {
     closeModal: () => dispatch({ type: 'CLEAR_MODAL_FOOD' }),
-    addFoodToCart: (food: Food, quantity: Number) => dispatch({ type: 'ADD_FOOD_TO_CART', food, quantity }),
+    addFoodToCart: (food: Food2, quantity: Number) => dispatch({ type: 'ADD_FOOD_TO_CART', food, quantity }),
   }
 );
 

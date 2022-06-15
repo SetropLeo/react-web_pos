@@ -29,9 +29,8 @@ const OrderSubmit = () => {
     store.dispatch({
       type: 'ADD_ORDER_TO_LIST',
       newOrder: {
-        id: store.getState().orderMenuOption.orderList.length + 1,
         list: store.getState().cartMenuOption.cartList,
-        totalPrice: subTotal,
+        totalPrice: subTotal.toFixed(2),
       }
     });
 
