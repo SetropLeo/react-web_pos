@@ -1,4 +1,4 @@
-import { Images } from '../../Images';
+import { Images } from '../../helper/Images';
 
 const INITIAL_STATE = {
   foodType: 'All Dishes',

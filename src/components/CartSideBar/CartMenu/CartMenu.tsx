@@ -1,6 +1,6 @@
 import React from 'react';
 import './CartMenu.css';
-import { Images } from '../../../Images';
+import { Images } from '../../../helper/Images';
 import CartElement from '../CartElement/CartElement';
 import { Food, Order } from '../../../models';
 import store from '../../../store/store';

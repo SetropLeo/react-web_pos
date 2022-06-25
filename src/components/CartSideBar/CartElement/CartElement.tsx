@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
-import { Images } from '../../../Images';
+import { Images } from '../../../helper/Images';
 import './CartElement.css';
 import store from '../../../store/store';
 
