@@ -1,14 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import './OrderSubmit.css'
+import './CartSubmit.css'
 import billIcon from '../../../images/bill.svg';
 import checkMarkIcon from '../../../images/checkMark.svg';
 import notificationIcon from '../../../images/notification.svg';
 import { Food } from '../../../models';
 import store from '../../../store/store';
 
-const OrderSubmit = () => {
-
+const CartSubmit = () => {
   const [subTotal, setSubTotal] = React.useState<number>(0);
   let counter: number;
 
@@ -75,4 +74,4 @@ const OrderSubmit = () => {
 
 const mapStateToProps = (state: any) => ({ cartList: state.cartMenuOption.cartList });
 
-export default connect(mapStateToProps)(OrderSubmit);
+export default connect(mapStateToProps)(CartSubmit);

@@ -1,10 +1,10 @@
 import React from 'react'
-import { DetailService } from '../../../services/Detail.service';
+import { OrderItemsService } from '../../../services/OrderItems.service';
 import { OrderService } from '../../../services/Order.service';
 import './OrderElement.css'
 
 const orderService = new OrderService();
-const detailService = new DetailService();
+const orderItemsService = new OrderItemsService();
 
 const OrderElement = () => {
   const [orderHistory, setOrderHistory] = React.useState<any>([]);
@@ -13,11 +13,12 @@ const OrderElement = () => {
     getOrderHistory();
   }, [])
 
+  // TODO - FIX GETORDERHISTORY
   async function getOrderHistory() {
     const orders = await orderService.getAllOrders();
 
     orders.forEach(async (order: any) => {
-      const items = await detailService.getFoodsByOrderID(order.id);
+      const items = await orderItemsService.getFoodsByOrderID(order.id);
       setOrderHistory((history: any) => [...history, {
         order_id: order.id,
         created_at: order.created_at,
@@ -29,7 +30,7 @@ const OrderElement = () => {
 
   return (
     <div className='orderList-container'>
-      {orderHistory.map((order: any) => {
+      {orderHistory?.map((order: any) => {
         return (
           <div key={order.order_id} className='individualOrder-container'>
             {order.items.map((item: any) => {

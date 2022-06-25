@@ -1,7 +1,7 @@
 import React from 'react'
-import OrderMenu from '../../components/CartSideBar/CartMenu/CartMenu'
-import ProductList from '../../components/FoodShelf/FoodList/FoodList';
-import SideBar from '../../components/SideBar/SideBar'
+import OrderMenu from '../../components/CartSidebar/CartMenu/CartMenu'
+import ProductList from '../../components/ProductsShelf/FoodList/FoodList';
+import SideBar from '../../components/OptionsSidebar/SideBar'
 import './Catalog.css';
 
 const DishesCatalog: React.FC = () => {

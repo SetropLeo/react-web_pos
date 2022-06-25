@@ -4,8 +4,8 @@ import { Images } from '../../../Images';
 import CartElement from '../CartElement/CartElement';
 import { Food, Order } from '../../../models';
 import store from '../../../store/store';
-import OrderSubmit from '../OrderSubmit/OrderSubmit';
-import OrderElement from '../../OrderListSideBar/OrderElement/OrderElement';
+import CartSubmit from '../CartSubmit/CartSubmit';
+import OrderElement from '../../OrderSidebar/OrderElement/OrderElement';
 import { OrderService } from '../../../services/Order.service';
 
 const CartMenu = () => {
@@ -46,7 +46,7 @@ const CartMenu = () => {
           {cartMenuList?.map((food: Food, index: number) => {
             return <CartElement key={index} food={food} index={index} />
           })}
-          <OrderSubmit />
+          <CartSubmit />
         </div>)}
       {cartMenuOption === 'Order History' && (
         <div className="orderList-subcontainer">

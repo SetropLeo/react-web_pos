@@ -1,8 +1,8 @@
-import { Food, Food2, Order } from "../../models";
-import { DetailService } from "../../services/Detail.service";
+import { Order } from "../../models";
+import { OrderItemsService } from "../../services/OrderItems.service";
 import { OrderService } from "../../services/Order.service";
 import { UserService } from "../../services/User.service";
-const detailService = new DetailService();
+const orderItemsService = new OrderItemsService();
 const orderService = new OrderService();
 const userService = new UserService();
 
@@ -23,9 +23,9 @@ export default async function orderMenuOption(state = INITIAL_STATE_ORDER_MENU, 
     orderService.createNewOrder(action.newOrder.totalPrice, firstUserID);
 
     setTimeout(async () => {
-      const lastOrder = await orderService.getLastOrderID();
+      const lastOrderID = await orderService.getLastOrderID();
       action.newOrder.list.forEach(async (listItem: any) => {
-        detailService.createNewOrderDetail(listItem.quantity, listItem.id, lastOrder);  
+        orderItemsService.createNewOrderItem(listItem.quantity, listItem.id, lastOrderID);  
       })
     }, 200);
   }

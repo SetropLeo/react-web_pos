@@ -1,24 +1,26 @@
+import { TUserDTO } from "../models";
+
 export class UserService {
 
-  getAllUsers() {
-    return fetch('http://localhost:3001/user/getAll')
+  public async getAllUsers(): Promise<TUserDTO[]> {
+    return fetch('http://localhost:3001/user/', { method: 'GET'})
       .then((response) => response.json())
       .then((responseJSON) => {
         return responseJSON
       })
   }
 
-  async getUsersLength() {
+  public async getUsersLength(): Promise<number> {
     const users = await this.getAllUsers();
     return users.length;
   }
 
-  async getFirstUserID() {
+  public async getFirstUserID(): Promise<string> {
     const users = await this.getAllUsers();
-    return users[0];
+    return users[0].id;
   }
 
-  createUser() {
+  public createUser(): void {
     fetch('http://localhost:3001/user/post', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

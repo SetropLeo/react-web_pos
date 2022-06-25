@@ -1,23 +1,25 @@
+import { TOrderDTO } from "../models";
+
 export class OrderService {
 
-  async getAllOrders() {
-    const response = await fetch('http://localhost:3001/order/getAll');
+  public async getAllOrders(): Promise<TOrderDTO[]> {
+    const response = await fetch('http://localhost:3001/order/', { method: 'GET' });
     const responseJson = await response.json();
     return responseJson;
   }
 
-  async getOrdersLength() {
+  public async getOrdersLength(): Promise<number> {
     const orders = await this.getAllOrders();
     return orders.length;
   }
 
-  async getLastOrderID() {
+  public async getLastOrderID(): Promise<string> {
     const orders = await this.getAllOrders();
     return orders[orders.length - 1].id;
   }
 
-  createNewOrder(price: number, user_id: string) {
-    fetch('http://localhost:3001/order/create', {
+  public createNewOrder(price: number, user_id: string): void {
+    fetch('http://localhost:3001/order/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

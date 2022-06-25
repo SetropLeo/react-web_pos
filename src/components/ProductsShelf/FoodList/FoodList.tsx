@@ -3,22 +3,23 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as modalActions from '../../../store/actions/modalFoodActions';
-import FoodModal from '../../FoodModal/FoodModal';
+import FoodModal from '../../ProductModal/FoodModal';
 import ProductCard from '../FoodCard/FoodCard';
 import { Food2 } from '../../../models';
 import './FoodList.css'
+import { FoodService } from '../../../services/Food.service';
 
 const ProductList: React.FC = ({ activeType }: any) => {
   const [foods, setFoods] = React.useState<Food2[]>([]);
+  const foodService = new FoodService();
 
   React.useEffect(() => {
     getFoodList()
   }, [])
 
-  function getFoodList() {
-    fetch('http://localhost:3001/food/getAll')
-      .then(response => response.json())
-      .then(responseJSON => setFoods(responseJSON))
+  async function getFoodList() {
+    const foods = await foodService.getFoodList();
+    setFoods(foods);
   }
 
   return (
