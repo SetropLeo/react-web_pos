@@ -19,12 +19,14 @@ const OrderElement = () => {
 
     orders.forEach(async (order: any) => {
       const items = await orderItemsService.getFoodsByOrderID(order.id);
-      setOrderHistory((history: any) => [...history, {
-        order_id: order.id,
-        created_at: order.created_at,
-        total_price: order.price,
-        items: items ? items : null
-      }]);
+      setOrderHistory((history: any) => {
+        return [...history, {
+          order_id: order.id,
+          created_at: order.created_at,
+          total_price: order.price,
+          items: items ? items : null
+        }]
+      });
     })
   }
 
@@ -50,7 +52,7 @@ const OrderElement = () => {
             })}
             <div className='totalPrice-container'>
               <p className='total-price-title'>Total Price: </p>
-              <p className='total-price-value'>${Math.round(order.totalPrice)}</p>
+              <p className='total-price-value'>${order.total_price}</p>
             </div>
           </div>
         )

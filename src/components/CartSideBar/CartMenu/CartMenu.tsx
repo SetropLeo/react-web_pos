@@ -11,17 +11,15 @@ import { OrderService } from '../../../services/Order.service';
 const CartMenu = () => {
   const [cartMenuOption, setCartMenuOption] = React.useState<string>('New Order');
   const [cartMenuList, setCartMenuList] = React.useState<Food[]>([]);
-  const [orderMenuList, setOrderMenuList] = React.useState<Order[]>([]);
   const [orderNumber, setOrderNumber] = React.useState<number>(0);
   const OrderServices = new OrderService();
 
   store.subscribe(() => {
     setCartMenuList(store.getState().cartMenuOption.cartList);
-    // setOrderMenuList(store.getState().orderMenuOption.orderList);
   });
 
   React.useEffect(() => {
-    OrderServices.getOrdersLength().then((response) => setOrderNumber(response))
+    OrderServices.getOrdersLength().then((response) => setOrderNumber(response + 1))
   })
 
   return (
@@ -38,7 +36,7 @@ const CartMenu = () => {
           New Order ({cartMenuList.length})
         </span>
         <span className={`${cartMenuOption === 'Order History' ? 'active' : ''}`} onClick={() => setCartMenuOption('Order History')}>
-          Order History ({orderMenuList.length})
+          Order History
         </span>
       </div>
       {cartMenuOption === 'New Order' && (
