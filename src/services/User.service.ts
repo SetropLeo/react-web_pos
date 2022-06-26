@@ -3,7 +3,7 @@ import { TUserDTO } from "../models";
 export class UserService {
 
   public async getAllUsers(): Promise<TUserDTO[]> {
-    return fetch('http://localhost:3001/user/', { method: 'GET'})
+    return fetch('http://localhost:3001/user/', { method: 'GET' })
       .then((response) => response.json())
       .then((responseJSON) => {
         return responseJSON
@@ -21,7 +21,7 @@ export class UserService {
   }
 
   public createUser(): void {
-    fetch('http://localhost:3001/user/post', {
+    fetch('http://localhost:3001/user/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
