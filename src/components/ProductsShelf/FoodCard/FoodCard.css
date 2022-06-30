@@ -27,6 +27,9 @@
 .foodInfos-subcontainer {
   max-height: 110px;
   padding: 5px 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .foodName {
@@ -40,12 +43,18 @@
   opacity: .3;
   font-weight: bold;
   margin-bottom: 12px;
+  height: 38px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .foodPrice {
   font-size: 13px;
   font-weight: 600;
   padding-bottom: 8px;
+  align-items: center;
 }
 
 
@@ -110,7 +119,7 @@
   opacity: 0.8;
   margin: 10px auto;
   padding-bottom: 20px;
-  border-bottom: 1.5px solid rgba(0, 0, 0, 0.2) ;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
 }
 
 .foodModal-content h3 {
@@ -195,5 +204,5 @@
 
 .addToCart-button:hover {
   outline: 5px solid rgba(0, 172, 172, .7);
-  
+
 }
