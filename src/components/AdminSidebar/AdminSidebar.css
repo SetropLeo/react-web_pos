@@ -1,0 +1,28 @@
+.sidebar-container {
+  background-color: #FFFFFF;
+  width: 130px;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.business-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.business-container img {
+  width: 68px;
+}
+
+.business-container p {
+  margin: 0;
+  color: #000000;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .8px;
+}

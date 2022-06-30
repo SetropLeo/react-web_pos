@@ -1,0 +1,8 @@
+.admin-main-container {
+  display: flex;
+}
+
+.right {
+  height: 100vh;
+  background-color: #E9ECEF;
+}
