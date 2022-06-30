@@ -5,7 +5,7 @@ import CartElement from '../CartElement/CartElement';
 import { Food, Order } from '../../../models';
 import store from '../../../store/store';
 import CartSubmit from '../CartSubmit/CartSubmit';
-import OrderElement from '../../OrderSidebar/OrderElement/OrderElement';
+import OrderElement from '../../OrderSidebar/OrderSidebar';
 import { OrderService } from '../../../services/Order.service';
 
 const CartMenu = () => {

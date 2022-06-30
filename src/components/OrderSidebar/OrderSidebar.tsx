@@ -1,7 +1,7 @@
 import React from 'react'
-import { OrderItemsService } from '../../../services/OrderItems.service';
-import { OrderService } from '../../../services/Order.service';
-import './OrderElement.css'
+import { OrderItemsService } from '../../services/OrderItems.service';
+import { OrderService } from '../../services/Order.service';
+import './OrderSidebar.css'
 
 const orderService = new OrderService();
 const orderItemsService = new OrderItemsService();
